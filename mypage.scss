@@ -33,7 +33,8 @@ a {
 
 .grid-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .header {
@@ -43,7 +44,7 @@ a {
     right: 0;
     z-index: 5;
     background-color: $primary-color;
-    box-shadow: 0 0.1rem 1.5rem 0.2rem rgba(0, 0, 0, 0.637);
+    border: 3px solid #ddd;
     .container {
         padding: 1rem 0;
         display: flex;
@@ -66,6 +67,7 @@ a {
         .text {
             position: relative;
             color: $black-color;
+            padding-bottom: 12px;
             border-bottom: 0;
             &:after {
                 content: "";
@@ -75,7 +77,7 @@ a {
                 transform: translateY(-50%);
                 left: 0;
                 width: 0;
-                transition: width 0.25s ease-in;
+                transition: width 0.3s linear;
                 background-color: $secondary-color;
             }
             &:hover:after {
@@ -92,6 +94,7 @@ a {
 
 .main-content {
     background-color: $gray-color;
+    animation: slideDowm 0.5s linear;
 }
 
 .content-login {
@@ -106,13 +109,16 @@ a {
             max-width: 32rem;
             font-weight: 400;
         }
+        .title {
+            font-size: 7.49rem;
+        }
     }
 }
 
 .form-login {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0 0 6rem;
+    padding: 2rem 0 0 4rem;
     border-top: 0.1rem dotted #333;
     .login {
         font-size: 4rem;
@@ -126,19 +132,21 @@ a {
         padding: 2rem 0 0.6rem;
     }
     .box-login {
-        padding: 1.2rem 0.8rem;
+        padding: 12px 10px;
         outline: none;
         border: 0.1rem solid #ccc;
         border-left: 0.3rem solid $pink-color;
         font-size: $font-16;
-        transition: box-shadow 0.25s ease-in-out;
+        transition: all 0.4s linear;
         &:focus {
-            box-shadow: 0 0 2rem rgba(255, 0, 170, 0.445);
+            box-shadow: 0 0 2rem rgba(255, 0, 170, 0.25);
             border: none;
+            transform: scale(1.01);
+            border-radius: 3px;
         }
     }
     .option {
-        margin: 1rem 0;
+        margin: 20px 0;
         display: flex;
         justify-content: space-between;
         label {
@@ -148,6 +156,20 @@ a {
             padding: 0;
             font-weight: 400;
         }
+    }
+    span {
+        font-size: $font-18;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 12px;
+        color: $blur-color;
+    }
+    .create-account {
+        display: block;
+        text-align: center;
+        font-size: $font-16;
+        font-weight: 200;
+        margin-top: 16px;
     }
 }
 
@@ -160,7 +182,14 @@ a {
     text-align: center;
     transition: all 0.8s ease;
     &:hover {
-        box-shadow: 0 0 0.6rem 0 rgba(12, 12, 12, 0.8);
+        opacity: 0.9;
+    }
+    &:nth-child(1):hover {
+        box-shadow: 0 0 16px rgb(27 80 255 / 80%);
+        opacity: 0.9;
+    }
+    &:nth-child(2):hover {
+        box-shadow: 0 0 16px rgb(255 25 64 / 80%);
         opacity: 0.9;
     }
 }
@@ -168,7 +197,7 @@ a {
 .other {
     display: flex;
     justify-content: space-between;
-    margin: 1.6rem 0;
+    margin: 12px 0;
     margin-left: -0.8rem;
     .btn-login {
         width: 50%;
@@ -207,7 +236,6 @@ a {
     color: $secondary-color;
     transform: rotate(90deg);
     z-index: 1;
-    text-shadow: 0.8rem 0 1rem rgba(0, 0, 0, 0.8);
 }
 
 .bread {
@@ -238,5 +266,16 @@ a {
             font-size: 1.6rem;
             padding-left: 0.3rem;
         }
+    }
+}
+
+@keyframes slideDowm {
+    from {
+        transform: translateY(-40%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
