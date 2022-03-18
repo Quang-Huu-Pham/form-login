@@ -1,0 +1,242 @@
+$primary-color: #fff;
+$gray-color: rgb(240, 240, 240);
+$secondary-color: #106a4b;
+$black-color: #000;
+$pink-color: rgb(255, 36, 171);
+$blur-color:rgba(85, 85, 85, 0.795);
+$font-16: 1.6rem;
+$font-18:1.8rem;
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 2.2rem;
+}
+
+h1 {
+    font-size: 8rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: $primary-color;
+    box-shadow: 0 0.1rem 1.5rem 0.2rem rgba(0, 0, 0, 0.637);
+    .container {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            color: $black-color;
+        }
+    }
+}
+
+.menu-list {
+    .menu-item {
+        display: inline-block;
+        padding: 0 2rem;
+        font-size: $font-16;
+        text-align: center;
+        .text {
+            position: relative;
+            color: $black-color;
+            border-bottom: 0;
+            &:after {
+                content: "";
+                position: absolute;
+                height: 0.3rem;
+                bottom: 0;
+                transform: translateY(-50%);
+                left: 0;
+                width: 0;
+                transition: width 0.25s ease-in;
+                background-color: $secondary-color;
+            }
+            &:hover:after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.content {
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    margin-top: 6rem;
+}
+
+.main-content {
+    background-color: $gray-color;
+}
+
+.content-login {
+    background-color: $gray-color;
+    margin-top: 5rem;
+    padding: 0.8rem 3rem;
+    .caption {
+        margin-bottom: 4rem;
+        .greeting {
+            font-size: $font-16;
+            color: $blur-color;
+            max-width: 32rem;
+            font-weight: 400;
+        }
+    }
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0 0 6rem;
+    border-top: 0.1rem dotted #333;
+    .login {
+        font-size: 4rem;
+        padding-bottom: 2rem;
+        color: $secondary-color;
+    }
+    .ingredient-name {
+        font-size: $font-16;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        padding: 2rem 0 0.6rem;
+    }
+    .box-login {
+        padding: 1.2rem 0.8rem;
+        outline: none;
+        border: 0.1rem solid #ccc;
+        border-left: 0.3rem solid $pink-color;
+        font-size: $font-16;
+        transition: box-shadow 0.25s ease-in-out;
+        &:focus {
+            box-shadow: 0 0 2rem rgba(255, 0, 170, 0.445);
+            border: none;
+        }
+    }
+    .option {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        label {
+            flex: 1;
+        }
+        .ingredient-name {
+            padding: 0;
+            font-weight: 400;
+        }
+    }
+}
+
+.btn-login {
+    outline: none;
+    border: none;
+    padding: 1.4rem;
+    color: $primary-color;
+    font-size: $font-16;
+    text-align: center;
+    transition: all 0.8s ease;
+    &:hover {
+        box-shadow: 0 0 0.6rem 0 rgba(12, 12, 12, 0.8);
+        opacity: 0.9;
+    }
+}
+
+.other {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.6rem 0;
+    margin-left: -0.8rem;
+    .btn-login {
+        width: 50%;
+        margin-left: 0.8rem;
+    }
+}
+
+.content-img {
+    overflow: hidden;
+    padding-top: 68.3rem;
+    padding-left: 52rem;
+    background: url("https://papers.co/wallpaper/papers.co-ob55-green-leaf-dark-nature-40-wallpaper.jpg?download=true") top center / cover no-repeat;
+    margin-left: 13.8rem;
+    box-shadow: -0.6rem 0.6rem 1.6rem rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+    .castle {
+        position: absolute;
+        top: 50%;
+        left: -52%;
+        font-size: 9rem;
+        color: $primary-color;
+        transform: rotate(90deg);
+        max-width: 60rem;
+        text-align: center;
+        z-index: 2;
+        text-shadow: 0.8rem 0 1rem rgba(0, 0, 0, 0.8);
+    }
+}
+
+.gap {
+    position: absolute;
+    font-size: 9rem;
+    top: 40.2rem;
+    left: 35.8%;
+    color: $secondary-color;
+    transform: rotate(90deg);
+    z-index: 1;
+    text-shadow: 0.8rem 0 1rem rgba(0, 0, 0, 0.8);
+}
+
+.bread {
+    display: none;
+    padding-left: 5rem;
+    .item {
+        font-size: $font-18;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0.8rem 0;
+        padding: 0.8rem;
+        background-color: #1c8665;
+        border-radius: 1.6rem;
+        color: $primary-color;
+        transition: all 0.25s ease-in;
+        &:hover {
+            font-size: 2.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.63);
+        }
+    }
+    .now {
+        background-color: #ee2742;
+        border-radius: 3.2rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        padding: 2.2rem;
+        text-align: center;
+        .icon {
+            font-size: 1.6rem;
+            padding-left: 0.3rem;
+        }
+    }
+}
